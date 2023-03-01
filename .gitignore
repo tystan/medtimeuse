@@ -37,3 +37,12 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# no data upload
+dat/*
+# no identifying info
+r/0_*\.R
+# no bootstrrapping yet
+r/2_*\.R
+
+

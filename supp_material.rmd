@@ -1,0 +1,205 @@
+---
+title: "Supplementary material"
+author: "Ty Stanford and Dot Dumuid"
+subtitle: "Using wrist worn accelerometers to identify the sedentary impact of medicines with anticholinergic or sedative properties: a 12-month prospective analysis"
+format: 
+  pdf:
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    highlight-style: atom-one
+    classoption: portrait
+editor: source
+---
+
+
+
+# R setup
+
+```{R}
+#| include: false
+
+
+knitr::read_chunk('r/1_analysis.R')
+```
+
+
+## Pacakges
+
+```{R, libs}
+#| include: true
+
+```
+
+## Session functions and constants
+
+```{R, funcs_and_consts}
+#| include: true
+
+```
+
+
+\newpage
+
+
+
+
+# Data processing
+
+
+## Read analysis data
+
+```{R, read}
+#| include: true
+
+```
+
+
+
+## Create *ilr* coordinates from time-use categories
+
+
+```{R, ilr_calcs}
+
+```
+
+
+\newpage
+
+
+# Exploratory analysis
+
+
+## Correlation between predictor variables at trial stages
+
+
+```{R, exploratory_1}
+#| fig-width: 10
+#| fig-height: 5
+#| echo: false
+#| fig-cap: "Scatterplot of sedentary and anticholinergic load scores at baseline and 12 months for each participant (complete data) "
+```
+
+
+
+\clearpage
+
+## Change in predictor variables over trial stage
+
+
+```{R, exploratory_2}
+#| fig-width: 10
+#| fig-height: 5
+#| echo: false
+#| fig-cap: "Scatterplot of baseline and 12 month sedentary and anticholinergic load scores for each participant (complete data) "
+```
+
+\clearpage
+
+## Change in untransformed outcome variables over trial stage (by predictors)
+
+
+```{R, exploratory_3a}
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+#| fig-cap: "Minutes in each time-use category at baseline and 12 months for each participant (points coloured by sedentary load scores at trial stage)"
+```
+
+
+```{R, exploratory_3b}
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+#| fig-cap: "Minutes in each time-use category at baseline and 12 months for each participant (points coloured by anticholinergic load scores at trial stage)"
+```
+
+\clearpage
+
+
+## Change in *ilr* transformed outcome variables over trial stage (by predictors)
+
+
+```{R, exploratory_4a}
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+#| fig-cap: "*ilr* values (transformed time-use category compositions) at baseline and 12 months for each participant (points coloured by sedentary load scores at trial stage)"
+```
+
+
+```{R, exploratory_4b}
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+#| fig-cap: "*ilr* values (transformed time-use category compositions) at baseline and 12 months for each participant (points coloured by anticholinergic load scores at trial stage)"
+```
+
+
+
+
+
+\clearpage
+
+
+
+
+# Statistical modelling
+
+## Tansform data to long format 
+
+Creating "stacked" dataset.
+
+```{R, analysis_data}
+#| include: true
+
+```
+
+\newpage
+
+
+## Stacked linear mixed effect model of *ilr* value on sedentary load scores
+
+
+```{R, mod_sed}
+#| include: true
+#| fig-width: 9
+#| fig-height: 12
+
+```
+
+\newpage
+
+## Stacked linear mixed effect model of *ilr* value on anticholinergic load scores
+
+
+```{R, mod_ach}
+#| include: true
+#| fig-width: 9
+#| fig-height: 12
+
+```
+
+\newpage
+
+## Predictions from model 
+
+
+
+```{R, pred_df}
+#| include: true
+#| results: hold
+
+```
+
+\newpage
+
+# Session info
+
+
+```{R}
+format(Sys.time(), '%d-%b-%Y')
+sessionInfo()
+```
+
+
