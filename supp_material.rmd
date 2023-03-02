@@ -73,13 +73,13 @@ knitr::read_chunk('r/1_analysis.R')
 ## Correlation between predictor variables at trial stages
 
 
+
 ```{R, exploratory_1}
 #| fig-width: 10
 #| fig-height: 5
 #| echo: false
-#| fig-cap: "Scatterplot of sedentary and anticholinergic load scores at baseline and 12 months for each participant (complete data) "
+#| fig-cap: "Scatterplot of sedentary and anticholinergic load scores at baseline and 12 months for each participant (complete data). Values are slightly jittered to avoid overlap."
 ```
-
 
 
 \clearpage
@@ -91,8 +91,16 @@ knitr::read_chunk('r/1_analysis.R')
 #| fig-width: 10
 #| fig-height: 5
 #| echo: false
-#| fig-cap: "Scatterplot of baseline and 12 month sedentary and anticholinergic load scores for each participant (complete data) "
+#| fig-cap: "Scatterplot (jittered points) of baseline and 12 month sedentary and anticholinergic load scores for each participant (complete data). Values are slightly jittered to avoid overlap."
 ```
+
+
+
+```{R, exploratory_0}
+#| echo: false
+#| tbl-cap: "Classification of sedentary and anticholinergic load scores from baseline to 12 months for each participant (complete data) "
+```
+
 
 \clearpage
 
@@ -103,7 +111,7 @@ knitr::read_chunk('r/1_analysis.R')
 #| fig-width: 10
 #| fig-height: 7
 #| echo: false
-#| fig-cap: "Minutes in each time-use category at baseline and 12 months for each participant (points coloured by sedentary load scores at trial stage)"
+#| fig-cap: "Minutes in each time-use category at baseline and 12 months for each participant (points coloured by sedentary load scores at trial stage). Values are slightly jittered to avoid overlap."
 ```
 
 
@@ -111,7 +119,7 @@ knitr::read_chunk('r/1_analysis.R')
 #| fig-width: 10
 #| fig-height: 7
 #| echo: false
-#| fig-cap: "Minutes in each time-use category at baseline and 12 months for each participant (points coloured by anticholinergic load scores at trial stage)"
+#| fig-cap: "Minutes in each time-use category at baseline and 12 months for each participant (points coloured by anticholinergic load scores at trial stage). Values are slightly jittered to avoid overlap."
 ```
 
 \clearpage
@@ -182,9 +190,27 @@ Creating "stacked" dataset.
 
 \newpage
 
-## Predictions from model 
+## Model predictions
 
 
+
+### Medication load constant over time 
+
+
+```{R, pred_const_over_time_setup}
+#| include: true
+```
+
+
+```{R, pred_const_over_time}
+#| include: true
+#| fig-cap: "Model-estimated changes in activity across a 12-month period when sedative (left) and anticholinergic (right) loads are changed. Changes in activity are considered relative to no change in medication load (i.e., medication load = 2 at both time points). PA = physical activity; MVPA = moderate-to-vigorous physical activity."
+```
+
+\newpage
+
+
+### An increase in medication load
 
 ```{R, pred_df}
 #| include: true
